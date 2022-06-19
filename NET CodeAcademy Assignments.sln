@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tower Of Hanoi", "Tower Of Hanoi\Tower Of Hanoi.csproj", "{A0B402C5-C35F-4151-A6B8-7641CE746CFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Tower Of Hanoi", "Tower Of Hanoi\01. Tower Of Hanoi.csproj", "{A0B402C5-C35F-4151-A6B8-7641CE746CFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Termometras", "Termometras\02. Termometras.csproj", "{81765A05-3199-41C7-AD5A-984A700C76EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Kelias", "03. Kelias\03. Kelias.csproj", "{26AB0F07-7D60-4A90-ADCD-EC56E2275AD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{A0B402C5-C35F-4151-A6B8-7641CE746CFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0B402C5-C35F-4151-A6B8-7641CE746CFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0B402C5-C35F-4151-A6B8-7641CE746CFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81765A05-3199-41C7-AD5A-984A700C76EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81765A05-3199-41C7-AD5A-984A700C76EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81765A05-3199-41C7-AD5A-984A700C76EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81765A05-3199-41C7-AD5A-984A700C76EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26AB0F07-7D60-4A90-ADCD-EC56E2275AD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26AB0F07-7D60-4A90-ADCD-EC56E2275AD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26AB0F07-7D60-4A90-ADCD-EC56E2275AD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26AB0F07-7D60-4A90-ADCD-EC56E2275AD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
