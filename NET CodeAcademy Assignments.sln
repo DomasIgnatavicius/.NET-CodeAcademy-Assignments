@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. Termometras", "Termomet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. Kelias", "03. Kelias\03. Kelias.csproj", "{26AB0F07-7D60-4A90-ADCD-EC56E2275AD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Amziaus Melagis", "04. Amziaus Melagis\04. Amziaus Melagis.csproj", "{ED8590A6-8591-4777-AF9D-16CE23740B03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04. Amziaus Melagis", "04. Amziaus Melagis\04. Amziaus Melagis.csproj", "{ED8590A6-8591-4777-AF9D-16CE23740B03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05 DNR inzinerija", "05 DNR inzinerija\05 DNR inzinerija.csproj", "{BE737F10-2174-41C4-84C9-55FB377FAF11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{ED8590A6-8591-4777-AF9D-16CE23740B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED8590A6-8591-4777-AF9D-16CE23740B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED8590A6-8591-4777-AF9D-16CE23740B03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE737F10-2174-41C4-84C9-55FB377FAF11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE737F10-2174-41C4-84C9-55FB377FAF11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE737F10-2174-41C4-84C9-55FB377FAF11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE737F10-2174-41C4-84C9-55FB377FAF11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
