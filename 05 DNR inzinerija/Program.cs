@@ -4,7 +4,7 @@
 
 namespace _05_DNR_inzinerija
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -187,7 +187,6 @@ namespace _05_DNR_inzinerija
             arNormalizuota = true;
             return txt.Trim().Replace(" ", "").ToUpper();
         }
-
         public static bool arGrandineValidi(string txt)
         {
             string normalizuotasTxt = txt.Trim().Replace(" ", "").ToUpper();

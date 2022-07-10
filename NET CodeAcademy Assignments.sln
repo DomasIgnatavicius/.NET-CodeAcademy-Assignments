@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. Kelias", "03. Kelias\03
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04. Amziaus Melagis", "04. Amziaus Melagis\04. Amziaus Melagis.csproj", "{ED8590A6-8591-4777-AF9D-16CE23740B03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05 DNR inzinerija", "05 DNR inzinerija\05 DNR inzinerija.csproj", "{BE737F10-2174-41C4-84C9-55FB377FAF11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05 DNR inzinerija", "05 DNR inzinerija\05 DNR inzinerija.csproj", "{BE737F10-2174-41C4-84C9-55FB377FAF11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00. testai", "00. testai", "{3CF9210F-69C3-4EBD-8791-1CD2EB2CF2BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05 DNR inzinerija testai", "05 DNR inzinerija testai\05 DNR inzinerija testai.csproj", "{A37A5068-4D78-4FB8-93AB-B0359CB85C44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +43,16 @@ Global
 		{BE737F10-2174-41C4-84C9-55FB377FAF11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE737F10-2174-41C4-84C9-55FB377FAF11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE737F10-2174-41C4-84C9-55FB377FAF11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A37A5068-4D78-4FB8-93AB-B0359CB85C44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A37A5068-4D78-4FB8-93AB-B0359CB85C44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A37A5068-4D78-4FB8-93AB-B0359CB85C44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A37A5068-4D78-4FB8-93AB-B0359CB85C44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A37A5068-4D78-4FB8-93AB-B0359CB85C44} = {3CF9210F-69C3-4EBD-8791-1CD2EB2CF2BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A0212B4-D5A6-476E-B0D7-2BD8DE4FB0BD}
