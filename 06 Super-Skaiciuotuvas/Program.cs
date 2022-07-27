@@ -13,7 +13,7 @@
         static bool testiSuRezultatu = false;
         static void Main(string[] args)
         {
-            /*var fake_moves = new string[] { "1", "1", "15", "45", "2", "2", "10", "3" };
+            var fake_moves = new string[] { "1", "1", "15", "45", "2", "2", "10", "3" };
             //var fake_moves = new string[] { "1", "1", "15", "45", "3" };
             //var fake_moves = new string[] { "1", "1", "15", "45", "2", "2", "10", "1", "3", "2", "3", "3" };
             foreach (var move in fake_moves)
@@ -37,8 +37,8 @@
                 Console.WriteLine("Pirmas: " + pirmas);
                 Console.WriteLine("Antras: " + antras);
                 Console.WriteLine("Rezultatas" + Rezultatas());
-            }*/
-            while (true)
+            }
+            /*while (true)
             {
 
                 if (machineState == 1)
@@ -108,7 +108,7 @@
                 Console.WriteLine("---------");
                 Console.WriteLine();
                 Console.WriteLine(Rezultatas());
-            }
+            }*/
 
         }
 

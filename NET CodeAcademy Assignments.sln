@@ -17,9 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00. testai", "00. testai", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05 DNR inzinerija testai", "05 DNR inzinerija testai\05 DNR inzinerija testai.csproj", "{A37A5068-4D78-4FB8-93AB-B0359CB85C44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06 Super-Skaiciuotuvas", "06 Super-Skaiciuotuvas\06 Super-Skaiciuotuvas.csproj", "{DC17690C-C482-4032-BDDA-DB0A7AC9A61C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06 Super-Skaiciuotuvas", "06 Super-Skaiciuotuvas\06 Super-Skaiciuotuvas.csproj", "{DC17690C-C482-4032-BDDA-DB0A7AC9A61C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06 Super-SkaiciuotuvasTests", "06 Super-SkaiciuotuvasTests\06 Super-SkaiciuotuvasTests.csproj", "{40AC6C90-6FC7-4412-AE94-F55EFD572BDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06 Super-SkaiciuotuvasTests", "06 Super-SkaiciuotuvasTests\06 Super-SkaiciuotuvasTests.csproj", "{40AC6C90-6FC7-4412-AE94-F55EFD572BDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07 Kartuves", "07 Kartuves\07 Kartuves.csproj", "{9CD49723-3578-4DF1-8029-878FC95E118D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{40AC6C90-6FC7-4412-AE94-F55EFD572BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40AC6C90-6FC7-4412-AE94-F55EFD572BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40AC6C90-6FC7-4412-AE94-F55EFD572BDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CD49723-3578-4DF1-8029-878FC95E118D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CD49723-3578-4DF1-8029-878FC95E118D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CD49723-3578-4DF1-8029-878FC95E118D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CD49723-3578-4DF1-8029-878FC95E118D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
