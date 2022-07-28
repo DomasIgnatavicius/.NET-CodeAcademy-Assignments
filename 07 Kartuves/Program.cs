@@ -211,16 +211,37 @@
                 ivedimas = Convert.ToString(Console.ReadLine());
                 if (ivedimas == "1" || ivedimas == "2" || ivedimas == "3" || ivedimas == "4")
                 {
-                    switch (ivedimas)
+                    if(ivedimas == "1" && vardai.Length == 0)
                     {
-                        case "1": tema = "VARDAI"; break;
-                        case "2": tema = "LIETUVOS MIESTAI"; break;
-                        case "3": tema = "VALSTYBES"; break;
-                        case "4": tema = "KITA"; break;
-                        default:
-                            break;
+                        Console.WriteLine("Pasirinktoje kategorijoje nebeliko zodziu");
                     }
-                    on = false;
+                    else if (ivedimas == "2" && miestai.Length == 0)
+                    {
+                        Console.WriteLine("Pasirinktoje kategorijoje nebeliko zodziu");
+                    }
+                    else if (ivedimas == "3" && valstebes.Length == 0)
+                    {
+                        Console.WriteLine("Pasirinktoje kategorijoje nebeliko zodziu");
+                    }
+                    else if (ivedimas == "4" && kita.Length == 0)
+                    {
+                        Console.WriteLine("Pasirinktoje kategorijoje nebeliko zodziu");
+                    }
+                    else
+                    {
+                        switch (ivedimas)
+                        {
+                            case "1": tema = "VARDAI"; break;
+                            case "2": tema = "LIETUVOS MIESTAI"; break;
+                            case "3": tema = "VALSTYBES"; break;
+                            case "4": tema = "KITA"; break;
+                            default:
+                                break;
+                        }
+                        on = false;
+                    }
+
+                    
                 }
                 else
                     Console.WriteLine("Pasirinkimas turi buti 1 2 3 arba 4");
