@@ -32,7 +32,7 @@
             {
                 tusciasZodis.Add("_");
             }
-            Console.WriteLine("yeye");
+            
             while (vykstaSpejimai)
             {
                 Console.Clear();
@@ -317,7 +317,6 @@
                         if(spejimas == atsakymas[i])
                         {
                             tusciasZodis[i] = spejimas;
-                            Console.WriteLine("PAVYKO");
                             Console.WriteLine(tusciasZodis[i]);
                             
                         }
