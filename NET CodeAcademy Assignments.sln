@@ -23,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06 Super-SkaiciuotuvasTests
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07 Kartuves", "07 Kartuves\07 Kartuves.csproj", "{9CD49723-3578-4DF1-8029-878FC95E118D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08 Tower Of Hanoi OOP", "08 Tower Of Hanoi OOP\08 Tower Of Hanoi OOP.csproj", "{CA4D0B11-35E1-4516-9F7E-2319B7C97AC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08 Tower Of Hanoi OOP", "08 Tower Of Hanoi OOP\08 Tower Of Hanoi OOP.csproj", "{CA4D0B11-35E1-4516-9F7E-2319B7C97AC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08 Tower Of Hamoi OOP.Domain", "08 Tower Of Hamoi OOP.Domain\08 Tower Of Hamoi OOP.Domain.csproj", "{6AC528D5-50B7-4CB0-8F10-5B08E575862D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08 Tower Of Hamoi OOP.Domain", "08 Tower Of Hamoi OOP.Domain\08 Tower Of Hamoi OOP.Domain.csproj", "{6AC528D5-50B7-4CB0-8F10-5B08E575862D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music Shop DB", "Music Shop DB\Music Shop DB.csproj", "{9617C695-176B-4864-9A3A-E73AD3205F10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +79,10 @@ Global
 		{6AC528D5-50B7-4CB0-8F10-5B08E575862D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AC528D5-50B7-4CB0-8F10-5B08E575862D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AC528D5-50B7-4CB0-8F10-5B08E575862D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9617C695-176B-4864-9A3A-E73AD3205F10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9617C695-176B-4864-9A3A-E73AD3205F10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9617C695-176B-4864-9A3A-E73AD3205F10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9617C695-176B-4864-9A3A-E73AD3205F10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
