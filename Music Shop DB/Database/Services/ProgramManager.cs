@@ -38,7 +38,7 @@ namespace Music_Shop_DB.Database.Services
                     break;
                 case 3:
                     Console.Clear();
-                    validator.validateDarbuotojuParinktys();
+                    validator.validateDarbuotojuPrisijungimas();
                     darbuotojuMeniu();
                     break;
                 default:
@@ -146,6 +146,7 @@ namespace Music_Shop_DB.Database.Services
             Console.WriteLine("o - rikiuoti pagal");
             Console.WriteLine("s - paieska");
             var pasirinkimas = Console.ReadLine();
+            validator.validatePirkimoProcesas(pasirinkimas, "qos");
             switch (pasirinkimas)
             {
                 case "q":
@@ -173,33 +174,40 @@ namespace Music_Shop_DB.Database.Services
             Console.WriteLine("3. Composer");
             Console.WriteLine("4. Genre");
             Console.WriteLine("5. Composer ir Album");
-            var pasirinkimas = int.Parse(Console.ReadLine());
+            Console.WriteLine("q - back");
+            var pasirinkimas = Console.ReadLine();
+            validator.validatePirkimoProcesas(pasirinkimas, "5");
             switch (pasirinkimas)
             {
-                case 1:
+                case "1":
                     Console.Clear();
                     managerDB.getTracksNameABC();
                     perziuretiKatalogaNavigation();
                     break;
-                case 2:
+                case "2":
                     Console.Clear();
                     managerDB.getTracksNameCBA();
                     perziuretiKatalogaNavigation();
                     break;
-                case 3:
+                case "3":
                     Console.Clear();
                     managerDB.getTracksByComposer();
                     perziuretiKatalogaNavigation();
                     break;
-                case 4:
+                case "4":
                     Console.Clear();
                     managerDB.getTracksByGenre();
                     perziuretiKatalogaNavigation();
                     break;
-                case 5:
+                case "5":
                     Console.Clear();
                     managerDB.getTracksByGenre();
                     perziuretiKatalogaNavigation();
+                    break;
+                case "q":
+                    Console.Clear();
+                    managerDB.getTracksByGenre();
+                    perziuretiKataloga();
                     break;
                 default:
                     break;
@@ -214,38 +222,40 @@ namespace Music_Shop_DB.Database.Services
             Console.WriteLine("3. Composer");
             Console.WriteLine("4. Genre");
             Console.WriteLine("5. Track lenght(miliseconds)");
-            var pasirinkimas = int.Parse(Console.ReadLine());
+            Console.WriteLine("q - back)");
+            var pasirinkimas = Console.ReadLine();
+            validator.validatePirkimoProcesas(pasirinkimas, "5");
             switch (pasirinkimas)
             {
-                case 1:
+                case "1":
                     Console.Clear();
                     Console.WriteLine("Irasykite Id: ");
                     int id = int.Parse(Console.ReadLine());
                     managerDB.searchTracksById(id);
                     perziuretiKatalogaNavigation();
                     break;
-                case 2:
+                case "2":
                     Console.Clear();
                     Console.WriteLine("Irasykite Pavadinima: ");
                     string name = Console.ReadLine();
                     managerDB.searchTracksByName(name);
                     perziuretiKatalogaNavigation();
                     break;
-                case 3:
+                case "3":
                     Console.Clear();
                     Console.WriteLine("Irasykite Composer: ");
                     string composer = Console.ReadLine();
                     managerDB.searchTracksByComposer(composer);
                     perziuretiKatalogaNavigation();
                     break;
-                case 4:
+                case "4":
                     Console.Clear();
                     Console.WriteLine("Irasykite Zanra: ");
                     string genre = Console.ReadLine();
                     managerDB.searchTracksByGenre(genre);
                     perziuretiKatalogaNavigation();
                     break;
-                case 5:
+                case "5":
                     Console.Clear();
                     Console.WriteLine("1. Daugiau nei x");
                     Console.WriteLine("2. Maziau nei x");
@@ -267,6 +277,10 @@ namespace Music_Shop_DB.Database.Services
                     }
                     perziuretiKatalogaNavigation();
                     break;
+                case "q":
+                    Console.Clear();
+                    perziuretiKataloga();
+                    break;
                 default:
                     break;
             }
@@ -287,13 +301,23 @@ namespace Music_Shop_DB.Database.Services
                 case "1":
                     Console.Clear();
                     Console.WriteLine("Irasykite Id: ");
-                    savedId = int.Parse(Console.ReadLine());
+                    if(int.TryParse(Console.ReadLine(), out int a))
+                    {
+                        savedId = a;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ivestas neteisingas Id, press any key to continue");
+                        Console.ReadLine();
+                        Console.Clear();
+                        idetiIKrepseliLangas();
+                    }
                     managerDB.searchTracksById(savedId);
                     idetiIkrepseliNavigacija(int.Parse(pasirinkimas));
                     break;
                 case "2":
                     Console.Clear();
-                    Console.WriteLine("Irasykite Id: ");
+                    Console.WriteLine("Irasykite Pavadinima: ");
                     savedName = Console.ReadLine();
                     managerDB.searchTracksByName(savedName);
                     idetiIkrepseliNavigacija(int.Parse(pasirinkimas));
@@ -301,13 +325,23 @@ namespace Music_Shop_DB.Database.Services
                 case "3":
                     Console.Clear();
                     Console.WriteLine("Irasykite Id: ");
-                    savedAlbumId = long.Parse(Console.ReadLine());
+                    if (long.TryParse(Console.ReadLine(), out long b))
+                    {
+                        savedAlbumId = b;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ivestas neteisingas Id, press any key to continue");
+                        Console.ReadLine();
+                        Console.Clear();
+                        idetiIKrepseliLangas();
+                    }
                     managerDB.searchTracksByAlbumId(savedAlbumId);
                     idetiIkrepseliNavigacija(int.Parse(pasirinkimas));
                     break;
                 case "4":
                     Console.Clear();
-                    Console.WriteLine("Irasykite Id: ");
+                    Console.WriteLine("Irasykite Albumo Pavadinima: ");
                     savedAlbumName = Console.ReadLine();
                     managerDB.searchByAlbumName(savedAlbumName);
                     idetiIkrepseliNavigacija(int.Parse(pasirinkimas));
@@ -375,6 +409,7 @@ namespace Music_Shop_DB.Database.Services
             }
             Console.WriteLine("q - grizti atgal || y - uzbaigti pirkima");
             var pasirinkimas = Console.ReadLine();
+            validator.validatePirkimoProcesas(pasirinkimas,"qy");
             switch (pasirinkimas)
             {
                 case "q":
@@ -417,7 +452,9 @@ namespace Music_Shop_DB.Database.Services
             Console.WriteLine("1. Keisti klientu duomenis");
             Console.WriteLine("2. Pakeisti dainos statusa");
             Console.WriteLine("3. Statistika(darbuotojams");
+            Console.WriteLine("q - grizti atgal");
             var pasirinkimas = Console.ReadLine();
+            validator.validateDarbuotojuMeniu(pasirinkimas,"3");
             switch (pasirinkimas)
             {
                 case "1":
@@ -446,7 +483,9 @@ namespace Music_Shop_DB.Database.Services
             Console.WriteLine("1. Gauti pirkeju sarasa");
             Console.WriteLine("2. Pasalinti pirkeja pagal Id");
             Console.WriteLine("3. Modifikuoti pirkejo duomenis");
+            Console.WriteLine("q - grizti atgal");
             var pasirinkimas = Console.ReadLine();
+            validator.validateDarbuotojuMeniu(pasirinkimas, "3");
             switch (pasirinkimas)
             {
                 case "1":
@@ -474,15 +513,32 @@ namespace Music_Shop_DB.Database.Services
                     break;
             }
         }
-        public void salintiCustomerPagalId()
+        public void salintiCustomerPagalId() 
         {
             Console.WriteLine("Iveskite Id");
-            var id = long.Parse(Console.ReadLine());
+            long id = -1;
+            if (!long.TryParse(Console.ReadLine(), out long a))
+            {
+                Console.WriteLine("Ivestas ne skaicius, press any key to continue...");
+                Console.ReadLine();
+                Console.Clear();
+                darbuotojuMeniuKeistiDuomenis();
+            }
+            else
+                id = a;
+            if (!validator.arCustomerEgzistuoja(id))
+            {
+                Console.WriteLine("Vartotojas neegzistuoja, press any key to continue...");
+                Console.ReadLine();
+                Console.Clear();
+                darbuotojuMeniuKeistiDuomenis();
+            }
             Console.Clear();
             managerDB.getCustomerById(id);
             Console.WriteLine("Ar si vartotoja noretumete pasalinti?");
             Console.WriteLine("q - grizti atgal  ||  y - pasalinti");
             var pasirinkimas = Console.ReadLine();
+            validator.validateDarbuotojuMeniu(pasirinkimas, "qy");
             switch (pasirinkimas)
             {
                 case "q":
@@ -507,7 +563,24 @@ namespace Music_Shop_DB.Database.Services
         public void modifikuotiPirkejoDuomenis()
         {
             Console.WriteLine("Iveskite Id");
-            var id = long.Parse(Console.ReadLine());
+            //var id = long.Parse(Console.ReadLine());
+            long id = -1;
+            if(!long.TryParse(Console.ReadLine(), out long a))
+            {
+                Console.WriteLine("Ivestas ne skaicius, press any key to continue...");
+                Console.ReadLine();
+                Console.Clear();
+                darbuotojuMeniuKeistiDuomenis();
+            }
+            else
+                id = a;
+            if (!validator.arCustomerEgzistuoja(id))
+            {
+                Console.WriteLine("Vartotojas neegzistuoja, press any key to continue...");
+                Console.ReadLine();
+                Console.Clear();
+                darbuotojuMeniuKeistiDuomenis();
+            }
             Console.Clear();
             managerDB.getCustomerById(id);
             Console.WriteLine();
@@ -518,6 +591,13 @@ namespace Music_Shop_DB.Database.Services
             var pavarde = Console.ReadLine();
             Console.WriteLine("Iveskite nauja Email: ");
             var email = Console.ReadLine();
+            if (!email.Contains("@"))
+            {
+                Console.WriteLine("Email privalo tureti @ simboli, press any key to continue...");
+                Console.ReadLine();
+                Console.Clear();
+                darbuotojuMeniuKeistiDuomenis();
+            }
             managerDB.updateCustomer(id,vardas,pavarde,email);
 
             Console.WriteLine();
@@ -531,12 +611,18 @@ namespace Music_Shop_DB.Database.Services
         {
             Console.WriteLine("1. Gauti dainu sarasa");
             Console.WriteLine("2. Keisti dainos statusa");
+            Console.WriteLine("q - grizti atgal");
             var pasirinkimas = Console.ReadLine();
+            validator.validateDarbuotojuMeniu(pasirinkimas, "2");
             switch (pasirinkimas)
             {
                 case "1":
                     Console.Clear();
                     managerDB.getAllTracks();
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadLine();
+                    Console.Clear();
+                    darbuotojuMeniuKeistiDainosStatusa();
                     break;
                 case "2":
                     Console.Clear();
@@ -553,14 +639,32 @@ namespace Music_Shop_DB.Database.Services
         public void keistiDainosStatusa()
         {
             Console.WriteLine("Iveskite Id");
-            var id = long.Parse(Console.ReadLine());
+            long id = -1;
+            if (!long.TryParse(Console.ReadLine(), out long a))
+            {
+                Console.WriteLine("Ivestas ne skaicius, press any key to continue...");
+                Console.ReadLine();
+                Console.Clear();
+                darbuotojuMeniu();
+            }
+            else
+                id = a;
+            if (!validator.arEgzistuojaTrack(id))
+            {
+                Console.WriteLine("Tokia daina neegzistuoja, press any key to continue...");
+                Console.ReadLine();
+                Console.Clear();
+                darbuotojuMeniu();
+            }
             Console.Clear();
             managerDB.getTrackById(id);
             Console.WriteLine();
 
             Console.WriteLine("1. Keisti i Active");
             Console.WriteLine("2. Keisti i Inactive");
+            Console.WriteLine("q - grizti atgal");
             var pasirinkimas = Console.ReadLine();
+            validator.validateDarbuotojuMeniu(pasirinkimas, "2");
             switch (pasirinkimas)
             {
                 case "1":
@@ -581,6 +685,10 @@ namespace Music_Shop_DB.Database.Services
                     Console.Clear();
                     darbuotojuMeniuKeistiDainosStatusa();
                     break;
+                case "q":
+                    Console.Clear();
+                    darbuotojuMeniu();
+                    break;
                 default:
                     break;
             }
@@ -592,7 +700,9 @@ namespace Music_Shop_DB.Database.Services
             Console.WriteLine("2. Išgauti veiklos pelna (Neatskaičius mokesčių pilna suma)");
             Console.WriteLine("3. Išgauti veiklos pelną pagal paduotus metus");
             Console.WriteLine("4. Išgauti kiek kokio žanro kūrinių buvo nupirkta (Rikiuota pagal dydį)");
+            Console.WriteLine("q - grizti atgal");
             var pasirinkimas = Console.ReadLine();
+            validator.validateDarbuotojuMeniu(pasirinkimas,"4");
             switch (pasirinkimas)
             {
                 case "1":

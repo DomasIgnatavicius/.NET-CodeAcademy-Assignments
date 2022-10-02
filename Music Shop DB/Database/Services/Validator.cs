@@ -68,7 +68,33 @@ namespace Music_Shop_DB.Database.Services
                 return;
         }
 
-        public void validateDarbuotojuParinktys()
+        public bool arCustomerEgzistuoja(long id)
+        {
+            List<Customer> customers = manageDb.getAllCustomers();
+            foreach (var customer in customers)
+            {
+                if (customer.CustomerId == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool arEgzistuojaTrack(long id)
+        {
+            List<Track> tracks = manageDb.getAllTracks();
+            foreach (var track in tracks)
+            {
+                if (track.TrackId == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void validateDarbuotojuPrisijungimas()
         {
             ProgramManager programManager = new ProgramManager();
             Console.Clear();
@@ -114,6 +140,19 @@ namespace Music_Shop_DB.Database.Services
                         programManager.pirkimoLangas();
                     }
                     break;
+                case "5":
+                    if (pasirinkimas == "1" || pasirinkimas == "2" || pasirinkimas == "3" || pasirinkimas == "4" || pasirinkimas == "5" || pasirinkimas == "q")
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ivestas neteisingas pasirinkimas, press any key to continue...");
+                        Console.ReadLine();
+                        Console.Clear();
+                        programManager.pirkimoLangas();
+                    }
+                    break;
                 case "qy":
                     if (pasirinkimas == "y" || pasirinkimas == "q")
                     {
@@ -127,10 +166,73 @@ namespace Music_Shop_DB.Database.Services
                         programManager.idetiIKrepseliLangas();
                     }
                     break;
+                case "qos":
+                    if (pasirinkimas == "o" || pasirinkimas == "q" || pasirinkimas == "s")
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ivestas neteisingas pasirinkimas, press any key to continue...");
+                        Console.ReadLine();
+                        Console.Clear();
+                        programManager.perziuretiKataloga();
+                    }
+                    break;
                 default:
                     break;
             }
             
+        }
+
+        public void validateDarbuotojuMeniu(string pasirinkimas, string option)
+        {
+            ProgramManager programManager = new ProgramManager();
+            switch (option)
+            {
+                case "4":
+                    if (pasirinkimas == "1" || pasirinkimas == "2" || pasirinkimas == "3" || pasirinkimas == "q")
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ivestas neteisingas pasirinkimas, press any key to continue...");
+                        Console.ReadLine();
+                        Console.Clear();
+                        programManager.darbuotojuMeniu();
+                    }
+                    break;
+                case "2":
+                    if (pasirinkimas == "1" || pasirinkimas == "2" || pasirinkimas == "q")
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ivestas neteisingas pasirinkimas, press any key to continue...");
+                        Console.ReadLine();
+                        Console.Clear();
+                        programManager.darbuotojuMeniu();
+                    }
+                    break;
+                case "qy":
+                    if (pasirinkimas == "y" || pasirinkimas == "q")
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ivestas neteisingas pasirinkimas, press any key to continue...");
+                        Console.ReadLine();
+                        Console.Clear();
+                        programManager.darbuotojuMeniuKeistiDuomenis();
+                    }
+                    break;
+                default:
+                    break;
+            }
+
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Music_Shop_DB.Database.Services
 {
     public class ManagerDb
     {
-        public void getAllTracks()
+        public List<Track> getAllTracks()
         {
             using var context = new chinookContext();
             var tracks = context.Tracks
@@ -21,6 +21,7 @@ namespace Music_Shop_DB.Database.Services
             {
                 Console.WriteLine($"{track.TrackId} {track.Name} {track.Genre.Name} { track.Composer} {Encoding.Default.GetString(track.UnitPrice)} Eur");
             }
+            return tracks;
         }
         public void getTrackById(long id)
         {
